@@ -3,7 +3,6 @@ import { skillList } from './data.tsx';
 import './App.css';
 export default function Gallery() {
   const [index, setIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
   const hasNext = index < skillList.length - 1;
   const hasBack = index > 0;
 
@@ -23,17 +22,12 @@ export default function Gallery() {
     }
   }
 
-  function handleMoreClick() {
-    setShowMore(!showMore);
-  }
 
   let skill = skillList[index];
   return (
     <>
     <h1>10 Things that Require Zero Talent</h1>
     <h3>John Roy C. Ducut</h3>
-
-      {showMore && <p>{skill.detail}</p>}
       <img
         src={skill.url}
         alt={skill.alt}
